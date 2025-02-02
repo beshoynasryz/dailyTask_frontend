@@ -1,15 +1,6 @@
-import React from 'react';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import AddTask from '../components/AddTask';
-
-const Home = () => {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-6">Daily Tasks Report</h1>
-      <AddTask />
-      {/* <TaskForm /> */}
-      {/* <TaskList /> */}
-    </div>
-  );
+var Home = function () {
+    return (_jsxs("div", { className: "p-6", children: [_jsx("h1", { className: "text-2xl font-semibold mb-6", children: "" }), _jsx(AddTask, {})] }));
 };
-
 export default Home;

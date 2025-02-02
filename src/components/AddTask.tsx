@@ -94,6 +94,10 @@ const AddTask = () => {
     try {
       const createdTask = await createTask(employeeId, values);
       setTasks([...tasks, createdTask]); // Add to the list of tasks
+
+      // Update selected date based on task creation
+      setSelectedDate(values.from.split('T')[0]); // Extract date from 'from' field and update the date picker
+
       toast.success('Task created successfully!');
     } catch (error) {
       console.error('Error creating task', error);

@@ -10,7 +10,6 @@ interface Task {
   to: string;
 }
 
-// ✅ Define State Interface
 interface TasksState {
   tasks: Task[];
   totalHours: number;
@@ -35,7 +34,7 @@ export const fetchTasksSummary = createAsyncThunk(
   "tasks/fetchSummary",
   async ({ employeeId, date }: { employeeId: string; date: string }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/task/summary/${employeeId}/${date}`);
+      const response = await axios.get(`https://daily-task-backend-kappa.vercel.app/api/task/summary/${employeeId}/${date}`);
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || "Failed to fetch tasks");
@@ -48,7 +47,7 @@ export const createTask = createAsyncThunk(
   "tasks/createTask",
   async (taskData: { name: string; description: string; employeeId: string }, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:8000/api/task", taskData);
+      const response = await axios.post("https://daily-task-backend-kappa.vercel.app/api/task", taskData);
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || "Failed to create task");
@@ -61,7 +60,7 @@ export const updateTask = createAsyncThunk(
   "tasks/updateTask",
   async ({ taskId, updatedData }: { taskId: string; updatedData: Partial<Task> }, { rejectWithValue }) => {
     try {
-      const response = await axios.put(`http://localhost:8000/api/task/${taskId}`, updatedData);
+      const response = await axios.put(`https://daily-task-backend-kappa.vercel.app/api/task/${taskId}`, updatedData);
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || "Failed to update task");
@@ -74,7 +73,7 @@ export const deleteTask = createAsyncThunk(
   "tasks/deleteTask",
   async (taskId: string, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:8000/api/task/${taskId}`);
+      await axios.delete(`https://daily-task-backend-kappa.vercel.app/api/task/${taskId}`);
       return taskId;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || "Failed to delete task");

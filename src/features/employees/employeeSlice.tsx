@@ -21,7 +21,7 @@ const initialState: EmployeeState = {
 
 // Fetch employees from the backend
 export const fetchEmployees = createAsyncThunk('employees/fetchEmployees', async () => {
-  const response = await axios.get('http://localhost:8000/api/employee');
+  const response = await axios.get('https://daily-task-backend-kappa.vercel.app/api/employee');
   return response.data; // Return employee data
 });
 

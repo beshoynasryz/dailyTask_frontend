@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",  // Or any target you prefer
-    "lib": ["dom", "esnext"],
-    "jsx": "react-jsx",  // This line is crucial
-    "moduleResolution": "node",
-    "module": "esnext",
-    "strict": true,  // Optional but recommended
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,   // 🚀 Prevents TypeScript from generating `.js` files
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": ["src/**/*"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
