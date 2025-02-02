@@ -2,12 +2,14 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "jsx": "react-jsx",
+    "jsx": "react-jsx",                // For React 17+ JSX Transform
     "strict": true,
-    "noEmit": true,   // 🚀 Prevents TypeScript from generating `.js` files
+    "noEmit": true,                    // Don't generate .js files
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,           // For better performance in isolated files
+    "allowSyntheticDefaultImports": true, // Allow default imports from non-ES modules
+    "esModuleInterop": true            // For compatibility between CommonJS and ES modules
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
