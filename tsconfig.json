@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
-    "jsx": "react-jsx",                // For React 17+ JSX Transform
+    "module": "CommonJS",
+    "jsx": "react-jsx",
     "strict": true,
-    "noEmit": true,                    // Don't generate .js files
+    "noEmit": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true,           // For better performance in isolated files
-    "allowSyntheticDefaultImports": true, // Allow default imports from non-ES modules
-    "esModuleInterop": true            // For compatibility between CommonJS and ES modules
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,  // يسمح بالاستيراد الافتراضي
+    "esModuleInterop": true                // تفعيل التوافق بين وحدات ES و CommonJS
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
